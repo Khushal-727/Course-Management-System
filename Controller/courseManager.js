@@ -14,7 +14,7 @@ var addCourse = async (req,res) => {
     } else {
         var data = await Course.create(postData);
     }
-    res.status(200).json({data:postData});
+    res.status(200).json({data:data});
     console.log('Records inserted.');
 }
 
@@ -40,7 +40,7 @@ let updateCourse = async (req,res) => {
     const data = await Course.update(updatedData,{
         where: {id: req.params.id}
     });
-    res.status(200).json({data:updatedData});
+    res.status(200).json({data:data});
     console.log('One record Updated.');
 }
 
